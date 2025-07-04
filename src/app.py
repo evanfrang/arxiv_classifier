@@ -1,31 +1,27 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Form, Request
+from fastapi.responses import HTMLResponse
+from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 import joblib
-import os
 import numpy as np
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#PREDICT_DIR = os.path.join(ROOT_DIR, "predict")
-MODEL_DIR = os.path.join(ROOT_DIR, "models")
-
-model = joblib.load(MODEL_DIR + "/model.joblib")
-label_encoder = joblib.load(MODEL_DIR + "/label_encoder.joblib")
-vectorizer = joblib.load(MODEL_DIR + "/vectorizer.joblib")
-
 app = FastAPI()
+templates = Jinja2Templates(directory="templates")
 
-class AbstractInput(BaseModel):
-    abstract: str
+model = joblib.load("models/model.joblib")
+label_encoder = joblib.load("models/label_encoder.joblib")
+vectorizer = joblib.load("models/vectorizer.joblib")
 
-@app.post("/predict")
-def predict_category(data: AbstractInput):
-    X = [data.abstract]
-    X_vect = vectorizer.transform(X)  
+@app.get("/", response_class=HTMLResponse)
+async def read_form(request: Request):
+    return templates.TemplateResponse("form.html", {"request": request})
 
-    pred_encoded = model.predict(X_vect)
-    pred_label = label_encoder.inverse_transform(pred_encoded)[0]
-
-    probs = model.predict_proba(X_vect)[0]  # shape: (n_classes,)
+@app.post("/", response_class=HTMLResponse)
+async def handle_form(request: Request, abstract: str = Form(...)):
+    vec = vectorizer.transform([abstract])
+    pred = model.predict(vec)
+    #label = label_encoder.inverse_transform(pred)[0]
+    probs = model.predict_proba(vec)[0]
     
     top3_indices = np.argsort(probs)[-3:][::-1]
     top3_probs = probs[top3_indices]
@@ -35,5 +31,4 @@ def predict_category(data: AbstractInput):
         {"category": label, "probability": round(float(prob), 4)}
         for label, prob in zip(top3_labels, top3_probs)
     ]
-    
-    return {"top_3_predictions": result}
+    return templates.TemplateResponse("form.html", {"request": request, "top 3 predictions": result, "abstract": abstract})
