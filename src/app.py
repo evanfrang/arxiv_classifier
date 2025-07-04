@@ -31,4 +31,4 @@ async def handle_form(request: Request, abstract: str = Form(...)):
         {"category": label, "probability": round(float(prob), 4)}
         for label, prob in zip(top3_labels, top3_probs)
     ]
-    return templates.TemplateResponse("form.html", {"request": request, "top 3 predictions": result, "abstract": abstract})
+    return templates.TemplateResponse("form.html", {"request": request, "predictions": result, "abstract": abstract})

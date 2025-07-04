@@ -5,12 +5,17 @@
 </head>
 <body>
     <h1>Paste your abstract</h1>
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <textarea name="abstract" rows="10" cols="80">{{ abstract or '' }}</textarea><br><br>
         <input type="submit" value="Classify">
     </form>
-    {% if prediction %}
-        <h2>Prediction: {{ prediction }}</h2>
-    {% endif %}
+    {% if predictions %}
+        <h2>Top 3 Predictions</h2>
+        <ul>
+            {% for item in predictions %}
+                <li>{{ item.category }} — {{ item.probability }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
 </body>
 </html>
