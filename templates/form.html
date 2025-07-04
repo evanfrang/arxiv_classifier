@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Abstract Classifier</title>
+</head>
+<body>
+    <h1>Paste your abstract</h1>
+    <form method="post">
+        <textarea name="abstract" rows="10" cols="80">{{ abstract or '' }}</textarea><br><br>
+        <input type="submit" value="Classify">
+    </form>
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
