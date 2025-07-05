@@ -1,15 +1,8 @@
----
-author:
-- Evan Frangipane
-authors:
-- Evan Frangipane
-execute:
-  echo: true
-  message: false
-  warning: false
-title: Arxiv Abstract Classifier
-toc-title: Table of contents
----
+# Arxiv Abstract Classifier
+Evan Frangipane
+
+- [Goal](#goal)
+- [Dataset](#dataset)
 
 ## Goal
 
