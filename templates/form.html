@@ -9,6 +9,11 @@
         <textarea name="abstract" rows="10" cols="80">{{ abstract or '' }}</textarea><br><br>
         <input type="submit" value="Classify">
     </form>
+
+    <p>
+        <a href="https://github.com/evanfrang/arxiv_classifier" target="_blank">View this project on GitHub</a>
+    </p>
+
     {% if predictions %}
         <h2>Top 3 Predictions</h2>
         <ul>
