@@ -50,8 +50,6 @@ To briefly describe these categories:
 | hep_grav     | 0.89      | 0.87   | 0.88     | 3801      |
 | non_phys     | 0.93      | 0.91   | 0.92     | 6340      |
 
----
-
 |              | Precision  | Recall   | F1-Score | Support    |
 |-------|-----------|--------|----------|---------|
 | accuracy     |       |    | 0.88     | 20000      |
