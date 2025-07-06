@@ -47,10 +47,11 @@ To briefly describe these categories:
 
 ------------------------------------------------------------------------
 
-             \| Precision \| Recall \| Support \|  
-accuracy \| \| \| 0.88 \| 20000 \|  
-macro avg \| 0.87 \| 0.87 \| 0.87 \| 20000 \|  
-weighted avg \| 0.88 \| 0.88 \| 0.88 \| 20000 \|
+|              | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| accuracy     |           |        | 0.88     | 20000   |
+| macro avg    | 0.87      | 0.87   | 0.87     | 20000   |
+| weighted avg | 0.88      | 0.88   | 0.88     | 20000   |
 
 Here is the confusion matrix for Logistic Regression.
 <img src="images/lrconfusion.png" style="width:80.0%"
