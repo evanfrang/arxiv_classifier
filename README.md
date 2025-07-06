@@ -47,6 +47,7 @@ To briefly describe these categories:
 
 ------------------------------------------------------------------------
 
+             \| Precision \| Recall \| Support \|  
 accuracy \| \| \| 0.88 \| 20000 \|  
 macro avg \| 0.87 \| 0.87 \| 0.87 \| 20000 \|  
 weighted avg \| 0.88 \| 0.88 \| 0.88 \| 20000 \|
