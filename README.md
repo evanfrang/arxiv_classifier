@@ -5,7 +5,10 @@ Evan Frangipane
 - [Dataset](#dataset)
 - [Results](#results)
   - [Logistic Regression](#logistic-regression)
-  - [BERT](#bert)
+  - [DistilBERT](#distilbert)
+  - [DistilBERT + Freeze 4 layers +
+    LoRA](#distilbert--freeze-4-layers--lora)
+- [Conclusion](#conclusion)
 
 ## Goal
 
@@ -59,7 +62,9 @@ Here is the confusion matrix for Logistic Regression.
 <img src="images/lrconfusion.png" style="width:80.0%"
 data-fig-align="center" />
 
-### BERT
+### DistilBERT
+
+Training time 5 - 7 hours
 
 | Class       | Precision | Recall | F1-Score | Support |
 |-------------|-----------|--------|----------|---------|
@@ -74,3 +79,25 @@ data-fig-align="center" />
 | accuracy     |           |        | 0.90     | 20000   |
 | macro avg    | 0.88      | 0.88   | 0.88     | 20000   |
 | weighted avg | 0.89      | 0.90   | 0.89     | 20000   |
+
+### DistilBERT + Freeze 4 layers + LoRA
+
+Training time \< 1 hour
+
+Results were worse than both standard DistilBERT and Logistic
+Regression.
+
+## Conclusion
+
+BERT gave a marginal bump in performance compared to Logistic
+Regression, but the training time, size, and evaluation time make using
+it infeasible. This dataset was too simple to make full use of a
+transformer’s true capabilities. Logistic Regression really shines here
+because to predict a class given an abstract we can just compile a
+dictionary of commonly used words. Had we used more inputs like citing
+articles, date, or authors we could have made better use of a larger
+model.
+
+For now I will leave the Logisitc Regression model running on Render and
+I might revisit to pull articles to keep it up to date or train models
+over a larger set of inputs.
