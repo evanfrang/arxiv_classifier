@@ -25,25 +25,33 @@ could. I present a histogram with classes and their populations.
 <img src="images/class_hist.png" style="width:80.0%"
 data-fig-align="center" />
 
-To briefly describe these categories: - gen_phys: papers whose primary
-category is physics.\* as well as nuclear and quantum physics -
-hep_grav: high energy physics (hep.\*) and gravity and quantum cosmology
-(gr-qc) - astro: astrophysics - cond_matter: condensed matter -
-non_phys: everything else (math, computer science, etc.)
+To briefly describe these categories:
+
+- gen_phys: papers whose primary category is physics.\* as well as
+  nuclear and quantum physics
+- hep_grav: high energy physics (hep.\*) and gravity and quantum
+  cosmology (gr-qc)
+- astro: astrophysics
+- cond_matter: condensed matter
+- non_phys: everything else (math, computer science, etc.)
 
 ## Results
 
-| Class        | Precision | Recall | F1-Score | Support |
-|--------------|-----------|--------|----------|---------|
-| astro        | 0.95      | 0.93   | 0.94     | 3531    |
-| cond_matter  | 0.87      | 0.88   | 0.87     | 3435    |
-| gen_phys     | 0.70      | 0.75   | 0.73     | 2893    |
-| hep_grav     | 0.89      | 0.87   | 0.88     | 3801    |
-| non_phys     | 0.93      | 0.91   | 0.92     | 6340    |
-|              |           |        |          |         |
-| accuracy     |           |        | 0.88     | 20000   |
-| macro avg    | 0.87      | 0.87   | 0.87     | 20000   |
-| weighted avg | 0.88      | 0.88   | 0.88     | 20000   |
+| Class       | Precision | Recall | F1-Score | Support |
+|-------------|-----------|--------|----------|---------|
+| astro       | 0.95      | 0.93   | 0.94     | 3531    |
+| cond_matter | 0.87      | 0.88   | 0.87     | 3435    |
+| gen_phys    | 0.70      | 0.75   | 0.73     | 2893    |
+| hep_grav    | 0.89      | 0.87   | 0.88     | 3801    |
+| non_phys    | 0.93      | 0.91   | 0.92     | 6340    |
+
+------------------------------------------------------------------------
+
+                                          |
+
+accuracy \| \| \| 0.88 \| 20000 \|  
+macro avg \| 0.87 \| 0.87 \| 0.87 \| 20000 \|  
+weighted avg \| 0.88 \| 0.88 \| 0.88 \| 20000 \|
 
 Here is the confusion matrix for Logistic Regression.
 <img src="images/lrconfusion.png" style="width:80.0%"

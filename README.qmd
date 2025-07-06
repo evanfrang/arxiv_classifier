@@ -33,6 +33,7 @@ I present a histogram with classes and their populations.
 ![](images/class_hist.png){fig-align="center" width=80%}
 
 To briefly describe these categories:
+
 - gen_phys: papers whose primary category is physics.* as well as nuclear and quantum physics
 - hep_grav: high energy physics (hep.*) and gravity and quantum cosmology (gr-qc)
 - astro: astrophysics
@@ -48,7 +49,9 @@ To briefly describe these categories:
 | gen_phys     | 0.70      | 0.75   | 0.73     | 2893      |
 | hep_grav     | 0.89      | 0.87   | 0.88     | 3801      |
 | non_phys     | 0.93      | 0.91   | 0.92     | 6340      |
-|              ||||                                            |
+
+---
+                                          |
 | accuracy     |       |    | 0.88     | 20000      |
 | macro avg     | 0.87      | 0.87   | 0.87     | 20000      |
 | weighted avg     | 0.88      | 0.88   | 0.88     | 20000      |
