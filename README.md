@@ -4,6 +4,8 @@ Evan Frangipane
 - [Goal](#goal)
 - [Dataset](#dataset)
 - [Results](#results)
+  - [Logistic Regression](#logistic-regression)
+  - [BERT](#bert)
 
 ## Goal
 
@@ -37,6 +39,8 @@ To briefly describe these categories:
 
 ## Results
 
+### Logistic Regression
+
 | Class       | Precision | Recall | F1-Score | Support |
 |-------------|-----------|--------|----------|---------|
 | astro       | 0.95      | 0.93   | 0.94     | 3531    |
@@ -44,8 +48,6 @@ To briefly describe these categories:
 | gen_phys    | 0.70      | 0.75   | 0.73     | 2893    |
 | hep_grav    | 0.89      | 0.87   | 0.88     | 3801    |
 | non_phys    | 0.93      | 0.91   | 0.92     | 6340    |
-
-------------------------------------------------------------------------
 
 |              | Precision | Recall | F1-Score | Support |
 |--------------|-----------|--------|----------|---------|
@@ -56,3 +58,19 @@ To briefly describe these categories:
 Here is the confusion matrix for Logistic Regression.
 <img src="images/lrconfusion.png" style="width:80.0%"
 data-fig-align="center" />
+
+### BERT
+
+| Class       | Precision | Recall | F1-Score | Support |
+|-------------|-----------|--------|----------|---------|
+| astro       | 0.94      | 0.95   | 0.94     | 3531    |
+| cond_matter | 0.87      | 0.89   | 0.88     | 3435    |
+| gen_phys    | 0.77      | 0.75   | 0.76     | 2893    |
+| hep_grav    | 0.89      | 0.90   | 0.90     | 3801    |
+| non_phys    | 0.94      | 0.93   | 0.94     | 6340    |
+
+|              | Precision | Recall | F1-Score | Support |
+|--------------|-----------|--------|----------|---------|
+| accuracy     |           |        | 0.90     | 20000   |
+| macro avg    | 0.88      | 0.88   | 0.88     | 20000   |
+| weighted avg | 0.89      | 0.90   | 0.89     | 20000   |

@@ -42,6 +42,8 @@ To briefly describe these categories:
 
 ## Results
 
+### Logistic Regression
+
 | Class | Precision | Recall | F1-Score | Support |
 |-------|-----------|--------|----------|---------|
 | astro     | 0.95     | 0.93   | 0.94     | 3531   |
@@ -58,3 +60,20 @@ To briefly describe these categories:
 
 Here is the confusion matrix for Logistic Regression.
 ![](images/lrconfusion.png){fig-align="center" width=80%}
+
+
+### BERT
+
+| Class | Precision | Recall | F1-Score | Support |
+|-------|-----------|--------|----------|---------|
+| astro     | 0.94     | 0.95   | 0.94    | 3531   |
+| cond_matter     | 0.87      | 0.89   | 0.88     | 3435      |
+| gen_phys     | 0.77      | 0.75   | 0.76     | 2893      |
+| hep_grav     | 0.89      | 0.90   | 0.90     | 3801      |
+| non_phys     | 0.94      | 0.93   | 0.94     | 6340      |
+
+|              | Precision  | Recall   | F1-Score | Support    |
+|-------|-----------|--------|----------|---------|
+| accuracy     |       |    | 0.90     | 20000      |
+| macro avg     | 0.88      | 0.88   | 0.88     | 20000      |
+| weighted avg     | 0.89      | 0.90   | 0.89    | 20000      |
